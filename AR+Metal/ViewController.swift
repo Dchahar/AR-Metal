@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var sceneView: ARSCNView!
     
+    let configuration = ARWorldTrackingConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,6 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         self.sceneView.session.run(configuration)
     }
@@ -32,6 +33,11 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         self.sceneView.session.pause()
+    }
+    
+    @IBAction func resetAR(_ sender: UIButton) {
+        self.sceneView.session.pause()
+        self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
 }
     

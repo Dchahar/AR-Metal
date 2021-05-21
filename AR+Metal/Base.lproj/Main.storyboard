@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,11 +19,20 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqy-wt-92B">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agu-Lq-y0w">
+                                <rect key="frame" x="187.5" y="832" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetAR:" destination="BV1-FR-VrT" eventType="touchUpInside" id="2P3-JC-K8G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3C0-cp-GOg"/>
                         <constraints>
                             <constraint firstItem="Tqy-wt-92B" firstAttribute="leading" secondItem="3C0-cp-GOg" secondAttribute="leading" id="2OB-UF-pil"/>
+                            <constraint firstItem="3C0-cp-GOg" firstAttribute="bottom" secondItem="agu-Lq-y0w" secondAttribute="bottom" id="4sP-sk-mVF"/>
                             <constraint firstItem="3C0-cp-GOg" firstAttribute="trailing" secondItem="Tqy-wt-92B" secondAttribute="trailing" id="EO2-m7-3rt"/>
+                            <constraint firstItem="agu-Lq-y0w" firstAttribute="centerX" secondItem="3C0-cp-GOg" secondAttribute="centerX" id="FSP-yg-j2q"/>
                             <constraint firstItem="Tqy-wt-92B" firstAttribute="top" secondItem="3C0-cp-GOg" secondAttribute="top" id="ld7-ze-6Mc"/>
                             <constraint firstItem="3C0-cp-GOg" firstAttribute="bottom" secondItem="Tqy-wt-92B" secondAttribute="bottom" id="yu0-Oz-ubl"/>
                         </constraints>
